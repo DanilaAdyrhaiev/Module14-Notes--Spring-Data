@@ -4,14 +4,19 @@ package com.goit.Module14.Services;
 import com.goit.Module14.Repos.NoteRepository;
 import com.goit.Module14.entities.Note;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class NoteService {
     private final NoteRepository noteRepository;
+
+    @Autowired
+    public NoteService(NoteRepository noteRepository) {
+        this.noteRepository = noteRepository;
+    }
 
     public Note add(Note note) {
         return noteRepository.save(note);

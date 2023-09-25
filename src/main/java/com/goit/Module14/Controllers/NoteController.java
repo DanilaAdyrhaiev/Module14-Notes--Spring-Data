@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/note")
 @RequiredArgsConstructor
 public class NoteController {
-    private final NoteRepository noteRepository;
     private final NoteService service;
 
     @GetMapping("/list")
